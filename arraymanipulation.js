@@ -1,8 +1,7 @@
 function processArray(inputArray) {
-    let index = 0;
     let resultArray = [];
-   
-    while (index < inputArray.length) {
+    
+    for (let index = 0; index < inputArray.length; index++) {
       if (inputArray[index] % 2 === 0) {
         let square = inputArray[index] ** 2;
         resultArray.push(square);
@@ -10,22 +9,24 @@ function processArray(inputArray) {
         let tripled = inputArray[index] * 3;
         resultArray.push(tripled);
       }
-      index++;
-        }
     }
-    function formateArray(modifiedArray, stringArray) {
-        let formattedStrings = [];
-        let minLength = Math.min(modifiedArray.length, stringArray.length); 
-      
-        for (let j = 0; j < minLength; j++) {
-          if (modifiedArray[j] % 2 !== 0) {
-            formattedStrings.push(stringArray[j].toLowerCase());
-          } else {
-            formattedStrings.push(stringArray[j].toUpperCase());
-          }
-        }
-      
-        return formattedStrings;
+  
+    return resultArray;
+  }
+  
+  function formateArray(modifiedArray, stringArray) {
+    let formattedStrings = [];
+    let minLength = Math.min(modifiedArray.length, stringArray.length); 
+  
+    for (let j = 0; j < minLength; j++) {
+      if (modifiedArray[j] % 2 !== 0) {
+        formattedStrings.push(stringArray[j].toLowerCase());
+      } else {
+        formattedStrings.push(stringArray[j].toUpperCase());
       }
-      
-      module.exports = { processArray, formateArray };
+    }
+  
+    return formattedStrings;
+  }
+  
+  module.exports = { processArray, formateArray };
