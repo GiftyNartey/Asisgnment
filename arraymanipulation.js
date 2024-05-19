@@ -13,3 +13,19 @@ function processArray(inputArray) {
       index++;
         }
     }
+    function formateArray(modifiedArray, stringArray) {
+        let formattedStrings = [];
+        let minLength = Math.min(modifiedArray.length, stringArray.length); 
+      
+        for (let j = 0; j < minLength; j++) {
+          if (modifiedArray[j] % 2 !== 0) {
+            formattedStrings.push(stringArray[j].toLowerCase());
+          } else {
+            formattedStrings.push(stringArray[j].toUpperCase());
+          }
+        }
+      
+        return formattedStrings;
+      }
+      
+      module.exports = { processArray, formateArray };
